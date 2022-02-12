@@ -20,7 +20,9 @@ Data is gotten from [themealdb](https://www.themealdb.com).
 The network layer uses `URLSession` to make requests to the remote server in order to fetch data.
 The `NetworkManager` class holds all the methods for requesting all the data required for the application. Its also important to not that this class is a [Singleton](https://developer.apple.com/documentation/swift/cocoa_design_patterns/managing_a_shared_resource_using_a_singleton) and can be accessed anywhere it's needed.
 See the example below of `downloadCategoryImage` that we used to download the image associated with each meal category.
-` func downloadCategoryImage() {
+
+` 
+func downloadCategoryImage() {
         guard let imageUrl = category?.strCategoryThumb else { return }
         NetworkManager.shared.downloadImage(from: imageUrl ) { [weak self] image in
             guard let self = self else { return }
@@ -28,7 +30,8 @@ See the example below of `downloadCategoryImage` that we used to download the im
                 self.categoryImageView.image = image
             }
         }
-    }`
+    }
+    `
     
   we call the singleton like so `NetworkManager.shared` and thereby access the `downloadImage` method with which we get image data.
   
