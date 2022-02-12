@@ -36,7 +36,7 @@ func downloadCategoryImage() {
   we call the singleton like so `NetworkManager.shared` and thereby access the `downloadImage` method with which we get image data.
   
   # View Layer
-  All views are built programmatically.
+  All views are built programmatically using the UIKit framework.
   
   # Model Layer
   The model consists of the following Codable structs `FoodCategory`, `Category`, `Meals`, `Meal`, `MealRecipe`, `Recipes` and we parse JSON using a `JSONDecoder()`   and a keyDecodingStrategy to convert the data from camel case to snake case.
